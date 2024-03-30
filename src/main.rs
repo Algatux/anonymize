@@ -1,13 +1,15 @@
 use clap::Parser;
 
 #[derive(Parser, Debug)]
-#[command(version, about, long_about = None)]
+#[command(name = "Anonymize")]
+#[command(version = "1.0")]
+#[command(about = "Sql anonimizer cli software", long_about = None)]
 struct Cli {
-    // path to the anonymize configuration file
-    #[arg(short,long)]
+    
+    #[arg(short,long,help="Path to the anonymize configuration file")]
     config_file: String,
-    // path to the file to anonymize
-    #[arg(short,long)]
+    
+    #[arg(short,long,help="Path to the file to anonymize")]
     source_file: Option<String>,
 }
 
